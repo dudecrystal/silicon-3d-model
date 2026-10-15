@@ -39,3 +39,6 @@ The scene uses shared geometry/materials, demand rendering, capped DPR 1.5 and a
 ## Deployment
 
 Vercel uses the Vite framework, `npm run build`, and `dist` output, configured in vercel.json. No environment variables are needed. Never commit tokens, local CLI authentication, node_modules or .vercel files.
+
+Live website: https://silicon-3d-model.vercel.app
+Source: https://github.com/dudecrystal/silicon-3d-model

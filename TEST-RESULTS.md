@@ -10,3 +10,5 @@
 - Limitations: physical Chromebook/phone performance unmeasured; touch emulated. Vite reports large lazy Three.js chunk (~283KB gzip). Three.js emits an upstream Clock deprecation warning.
 
 Production verification is recorded after deployment.
+
+Production: https://silicon-3d-model.vercel.app returned HTTP 200 without authentication. Full Chrome suite passed 42/42 against production, with zero console errors. User Chrome profile ninjacrystal2075 loaded the interactive scene with enabled controls. GitHub integration connected; free Hobby team voranelo.
