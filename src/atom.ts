@@ -6,6 +6,7 @@ export const ISOTOPES = [28, 29, 30] as const;
 export const COLORS = { Proton: '#FF7185', Neutron: '#A78BFA', Electron: '#65D9FF' } as const;
 export const SHELLS = [2, 8, 4] as const;
 export const RADII = [1.12, 1.85, 2.58] as const;
+export const SHELL_TILTS = [.32, -.48, .64] as const;
 
 // Closest-packed FCC lattice: compact, deterministic and identical across isotopes.
 const lattice: Position[] = [];
@@ -20,7 +21,7 @@ export function makeParticles(isotope: Isotope): Particle[] {
   }));
   return [...nucleus, ...SHELLS.flatMap((count, shell) => Array.from({ length: count }, (_, i): Particle => {
     const angle = (i / count) * Math.PI * 2 + [0.7, 0.25, 0.5][shell];
-    const tilt = [0.12, -0.22, 0.16][shell];
+    const tilt = SHELL_TILTS[shell];
     return { id: `electron-${shell}-${i}`, kind: 'Electron', shell: shell + 1,
       position: [Math.cos(angle) * RADII[shell], Math.sin(angle) * RADII[shell] * Math.cos(tilt), Math.sin(angle) * RADII[shell] * Math.sin(tilt)] };
   }))];

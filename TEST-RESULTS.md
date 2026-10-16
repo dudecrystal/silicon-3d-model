@@ -1,14 +1,13 @@
-# Verification — October 15, 2026
+# Verification — refinement, October 15, 2026
 
 - TypeScript + Vite production build: passed.
-- Atomic data tests: passed; correct counts, shell populations, IDs, coordinates and stable packing.
-- Google Chrome browser suite: 42/42 passed on final local source.
-- Includes actual sphere picking for all three particle types, orbit/wheel zoom, focus/reset, rapid isotope switching, sliding indicator and fades, keyboard/focus, responsive 320/390/768/1024 widths, reduced motion, touch-emulated drag/pinch, loading and WebGL fallback.
-- Additional mobile annotation-band check: no overlap; annotation bottom and canvas top both 330.78px at 390px width. Independent rendered review: ship.
-- Scene triangles: Si-28 24,144; Si-29 24,664; Si-30 25,184.
-- App dependencies: zero advisories in installed dependency audit.
-- Limitations: physical Chromebook/phone performance unmeasured; touch emulated. Vite reports large lazy Three.js chunk (~283KB gzip). Three.js emits an upstream Clock deprecation warning.
+- Atomic data tests: passed; correct isotope counts, shell populations, IDs, coordinates and stable nucleus packing.
+- Local Google Chrome browser suite: 42/42 passed on refined source.
+- Zoomed dwell-label suite: 14/14 passed. Actual proton/neutron hovering, 600ms delay, no labels at overview distance, no camera motion/selection, cancellation on leave/orbit, responsive layout and budget.
+- Blender gesture suite: 6/6 passed. Middle-drag orbit; Shift + middle-drag pan; constant camera distance during pan; Ctrl + middle-drag dolly; no accidental selection; reset after pan.
+- Desktop and 390px rendered screenshots reviewed; no clipping or annotation overlaps at overview. 320/390/768/1024 responsive checks passed. Keyboard, reduced motion, loading, WebGL fallback and touch-emulated orbit/pinch passed.
+- Current scene triangles: Si-28 36,846; Si-29 37,662; Si-30 38,478, below 100,000.
+- Physical Chromebook/phone performance remains unmeasured. Vite reports a large lazy scene chunk (~287KB gzip); upstream Three.js Clock deprecation warning remains.
 
-Production verification is recorded after deployment.
-
-Production: https://silicon-3d-model.vercel.app returned HTTP 200 without authentication. Full Chrome suite passed 42/42 against production, with zero console errors. User Chrome profile ninjacrystal2075 loaded the interactive scene with enabled controls. GitHub integration connected; free Hobby team voranelo.
+Public URL: https://silicon-3d-model.vercel.app
+Vercel free Hobby; GitHub main branch connected for automatic deployment. Initial version had full 42/42 production browser checks and HTTP200 without authentication. Further production checks are reported in the task completion handoff.

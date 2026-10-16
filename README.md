@@ -34,7 +34,7 @@ Select an isotope, drag to orbit, scroll or pinch to zoom, and click a particle 
 
 The Chrome suite covers isotope counts, transitions, pointer picking, camera controls, keyboard access, responsive sizes, reduced motion, emulated touch, initial loading and WebGL failure. Touch testing is emulated; physical phone/Chromebook performance has not been measured.
 
-The scene uses shared geometry/materials, demand rendering, capped DPR 1.5 and approximately 25,000 triangles. The lazily loaded Three.js scene is about 283 KB gzipped; Vite reports a large-chunk advisory. See TEST-RESULTS.md for actual validation results.
+The scene uses shared geometry/materials, demand rendering, capped DPR 1.5 and fewer than 39,000 triangles. The lazily loaded Three.js scene is about 287 KB gzipped; Vite reports a large-chunk advisory. See TEST-RESULTS.md for actual validation results.
 
 ## Deployment
 
@@ -42,3 +42,7 @@ Vercel uses the Vite framework, `npm run build`, and `dist` output, configured i
 
 Live website: https://silicon-3d-model.vercel.app
 Source: https://github.com/dudecrystal/silicon-3d-model
+
+### Refined inspection and Blender-style controls
+Zoom in, then hold the pointer over a particle for 600ms to reveal its name without selecting it. Leaving or moving the camera dismisses the label. Middle-drag or left-drag orbits; Shift + middle-drag or right-drag pans; Ctrl + middle-drag or the wheel zooms. Reset view recenters after panning. Click and keyboard particle selection remain available on touch and without hover. Additional Chrome run-code checks: tests/hover-check.js and tests/blender-controls-check.js.
+

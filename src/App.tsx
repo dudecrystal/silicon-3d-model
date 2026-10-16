@@ -35,7 +35,7 @@ export function App() {
         <Suspense fallback={<Skeleton/>}><AtomViewport isotope={isotope} command={command} onSelection={setSelected} onReady={() => setReady(true)} /></Suspense>
         <div className="particle-label" role="status" aria-live="polite">{selected && <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{duration:reduceMotion?0:.15}}><i style={{background:COLORS[selected]}}/>{selected}</motion.span>}</div>
       </div>
-      <div className="viewport-bottomline"><p>Drag to rotate <span>·</span> Scroll or pinch to zoom <span>·</span> Select a particle</p><div className="view-controls">
+      <div className="viewport-bottomline"><div className="interaction-hints"><p className="desktop-hint" title="Left or middle-drag: orbit. Shift + middle-drag or right-drag: pan. Ctrl + middle-drag or scroll: zoom.">Drag to orbit <span>·</span> Shift + middle-drag to pan <span>·</span> Scroll to zoom</p><p className="touch-hint">Drag to orbit <span>·</span> Pinch to zoom <span>·</span> Tap a particle</p><p className="hover-hint">Zoom in, then pause over a particle to identify it.</p></div><div className="view-controls">
         <button aria-label="Zoom out" title="Zoom out" disabled={!ready} onClick={() => act('out')}><Minus size={16}/></button>
         <button aria-label="Zoom in" title="Zoom in" disabled={!ready} onClick={() => act('in')}><Plus size={16}/></button>
         <button className="reset-button" aria-label="Reset view" disabled={!ready} onClick={() => act('reset')}><RotateCcw size={14}/><span>Reset view</span></button>

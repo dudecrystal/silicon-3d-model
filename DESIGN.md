@@ -132,15 +132,15 @@ All interface text uses self-hosted Manrope Variable with a sans-serif fallback.
 
 The single centered column has a maximum width of 1080px, including horizontal padding. Desktop padding is 48px 40px 30px. Circular isotope buttons are separated by 24px; their centers are 92px apart. The visualization is bounded by one-pixel horizontal dividers, with identification at its upper corners and controls below.
 
-The viewport is 440px tall by default. At a minimum height of 1000px and width of 900px it becomes 510px and the main top padding becomes 65px. At widths up to 700px, main padding is 30px 20px 24px, the viewport becomes 380px, controls and instructions stack, and isotope identity and counts stack. View controls and particle selection actions have a 44px minimum height there. At widths up to 370px, side padding becomes 14px and the viewport becomes 345px. The supported page minimum width is 320px.
+The viewport is 440px tall by default. At a minimum height of 1000px and width of 900px it becomes 510px and the main top padding becomes 65px. At widths up to 700px, main padding is 30px 20px 24px, the viewport becomes 350px, below a separate 68px annotation band, controls and instructions stack, and isotope identity and counts stack. View controls and particle selection actions have a 44px minimum height there. At widths up to 370px, side padding becomes 14px and the viewport remains 350px. The supported page minimum width is 320px.
 
 ## Elevation & Depth
 
-The interface uses no box shadows, bloom or decorative glow. Tonal surfaces and thin borders separate controls. The 3D model gains depth from shaded sphere geometry and directional lighting. A selected particle becomes larger and uses an emissive material; this is a local selection cue, not a postprocessing glow.
+The interface uses no bloom or decorative glow; only the small inspection tooltip has a restrained offset shadow. Tonal surfaces and thin borders separate controls. The 3D model gains depth from shaded sphere geometry and directional lighting. A selected particle becomes larger and uses an emissive material; this is a local selection cue, not a postprocessing glow.
 
 ## Shapes
 
-Isotope selectors and their persistent selection indicator are circles (68px diameter). View controls have compact rounded corners; the selected-particle label and text selection controls use smaller radii. Borders and section dividers are one pixel. Particles use spheres; electron shell paths are thin circular lines with slight tilt.
+Isotope selectors and their persistent selection indicator are circles (68px diameter). View controls have compact rounded corners; the selected-particle label and text selection controls use smaller radii. Borders and section dividers are one pixel. Particles use spheres; electron shell paths are thin circular lines with distinct illustrative tilts.
 
 ## Components
 
@@ -185,3 +185,7 @@ Buttons and the canvas wrapper use a two-pixel control-blue outline with a five-
 - **Don't** add idle rotation or bouncing selection motion.
 - **Don't** replace the centered scientific layout with dashboard cards or extra pages.
 - **Don't** use particle color as the only explanation of particle identity.
+
+## Scene refinement
+Particle spheres use 24×18 shared geometry, satin physical materials, restrained clearcoat and key/fill/rim lighting. Shell tilts share a single definition with electron placement. Sparse static points and a quiet atmospheric vignette add depth without textures or idle animation. Zoomed hover labels appear after 600ms, cancel on leave or camera interaction, and never move the camera. Middle-drag orbits, Shift + middle-drag pans, Ctrl + middle-drag dollies; wheel/touch and keyboard alternatives remain.
+
