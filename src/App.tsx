@@ -47,6 +47,5 @@ export function App() {
     </section>
     <div className="particle-access"><Crosshair size={13} aria-hidden="true"/><span>Select by type:</span>{(['Proton','Neutron','Electron'] as const).map(kind=><button key={kind} aria-label={`Select ${kind==='Electron'?'an':'a'} ${kind.toLowerCase()}`} onClick={()=>act(`select-${kind}`)} disabled={!ready}>{kind}</button>)}</div>
     <ul className="legend" aria-label="Particle color legend">{(['Proton','Neutron','Electron'] as const).map((kind, i)=><li key={kind}><i style={{background:COLORS[kind]}}/>{kind} <span>({['+','0','−'][i]})</span></li>)}</ul>
-    <p className="disclaimer">Simplified Bohr model — electron paths are illustrative.</p>
   </main>;
 }
